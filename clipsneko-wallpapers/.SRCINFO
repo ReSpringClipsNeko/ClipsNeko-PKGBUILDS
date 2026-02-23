@@ -1,0 +1,12 @@
+pkgbase = clipsneko-wallpapers
+	pkgdesc = Wallpapers for ClipsNeko Linux
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/ReSpringClipsNeko/ClipsNeko-Wallpapers
+	arch = any
+	license = custom
+	makedepends = git
+	source = git+ssh://git@github.com/ReSpringClipsNeko/ClipsNeko-Wallpapers.git
+	sha256sums = SKIP
+
+pkgname = clipsneko-wallpapers

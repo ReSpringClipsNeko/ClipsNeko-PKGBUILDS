@@ -1,0 +1,19 @@
+# Maintainer: zlicdt <xkicdt1@gmail.com>
+
+pkgname=clipsneko-wallpapers
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Wallpapers for ClipsNeko Linux"
+arch=('any')
+url="https://github.com/ReSpringClipsNeko/ClipsNeko-Wallpapers"
+license=('custom')
+makedepends=('git')
+source=("git+ssh://git@github.com/ReSpringClipsNeko/ClipsNeko-Wallpapers.git")
+sha256sums=('SKIP')
+
+package() {
+    cd "ClipsNeko-Wallpapers"
+
+    install -Dm644 _neko.png "$pkgdir/usr/share/wallpapers/clipsneko/_neko.png"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
