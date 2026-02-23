@@ -1,8 +1,8 @@
-# Maintainer: Catppuccin <releases@catppuccin.com>
+# Maintainer: zlicdt <xkicdt1@gmail.com>
 
-pkgname=catppuccin-konsole-theme-git
+pkgname=catppuccin-konsole-theme
 pkgdesc="Soothing pastel theme for Konsole"
-pkgver=r30.3b64040
+pkgver=0.2.0
 pkgrel=1
 url="https://github.com/catppuccin/konsole"
 license=('MIT')

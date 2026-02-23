@@ -1,11 +1,16 @@
-# Maintainer: Matt Quintanilla <matt at matt quintanilla . xyz>
-pkgname="kwin-effect-rounded-corners"
+# Maintainer: zlicdt <xkicdt1@gmail.com>
+
+_pkgname="kwin-effect-rounded-corners"
+pkgname="$_pkgname"
 pkgver=0.8.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Rounds the corners of your windows (wayland)"
 url="https://github.com/matinlotfali/KDE-Rounded-Corners"
 license=("GPL-3.0-only")
 arch=('x86_64')
+
+# This is a git package from AUR but seems update was too slow, pardon me.
+# Source: https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=kwin-effect-rounded-corners-git
 
 depends=(
   'kwin'
@@ -13,22 +18,27 @@ depends=(
 makedepends=(
   'cmake'
   'extra-cmake-modules'
+  'git'
   'ninja'
 )
-optdepends=(
-  'kwin-effect-rounded-corners-x11: for X11 support'
-)
 
+provides=("$_pkgname=${pkgver%%.g*}")
+conflicts=("$_pkgname-git")
 
-_pkgsrc="KDE-Rounded-Corners-$pkgver"
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/matinlotfali/KDE-Rounded-Corners/archive/v${pkgver}.tar.gz")
-sha256sums=('11201977db534c07e193cbd3466921c69477287cb1d7fbe452d6887778667cc0')
+_pkgsrc="kde-rounded-corners"
+source=("$_pkgsrc"::"git+$url.git")
+sha256sums=("SKIP")
 
 prepare() {
   # ensure Qt6
   sed -E -e 's&\bQUIET\b&REQUIRED&' -i "$_pkgsrc/cmake/qtversion.cmake"
 }
 
+pkgver() {
+  cd "$_pkgsrc"
+  git describe --long --tags --abbrev=7 --exclude='*[a-zA-Z][a-zA-Z]*' \
+    | sed -E 's/^[^0-9]*//;s/([^-]*-g)/r\1/;s/-/./g'
+}
 
 build() {
   local _cmake_options=(
