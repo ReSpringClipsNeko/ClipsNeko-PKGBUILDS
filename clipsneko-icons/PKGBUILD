@@ -1,0 +1,20 @@
+# Maintainer: zlicdt <xkicdt1@gmail.com>
+
+pkgname=clipsneko-icons
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Icons for ClipsNeko Linux"
+arch=('any')
+url="https://github.com/ReSpringClipsNeko/ClipsNeko-Icons"
+license=('custom')
+makedepends=('git')
+source=("git+ssh://git@github.com/ReSpringClipsNeko/ClipsNeko-Icons.git")
+sha256sums=('SKIP')
+
+package() {
+    cd "ClipsNeko-Icons"
+
+    install -Dm644 clipsneko-logo.png "$pkgdir/usr/share/pixmaps/clipsneko-logo.png"
+    install -Dm644 clipsneko-logo.svg "$pkgdir/usr/share/pixmaps/clipsneko-logo.svg"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

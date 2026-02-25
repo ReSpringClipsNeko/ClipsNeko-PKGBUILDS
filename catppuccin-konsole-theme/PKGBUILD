@@ -2,7 +2,7 @@
 
 pkgname=catppuccin-konsole-theme
 pkgdesc="Soothing pastel theme for Konsole"
-pkgver=0.2.0
+pkgver=r30.3b64040
 pkgrel=1
 url="https://github.com/catppuccin/konsole"
 license=('MIT')
