@@ -1,7 +1,7 @@
 # Maintainer: zlicdt <xkicdt1@gmail.com>
 
 pkgname=clipsneko-hooks
-pkgver=2026.02.16
+pkgver=2026.06.10
 pkgrel=1
 pkgdesc='ClipsNeko Linux libalpm hooks'
 groups=('clipsneko')
