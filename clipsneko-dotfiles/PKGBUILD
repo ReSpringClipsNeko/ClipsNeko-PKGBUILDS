@@ -1,0 +1,53 @@
+# Maintainer: zlicdt <xkicdt1@gmail.com>
+
+pkgname=clipsneko-dotfiles
+pkgver=0.0.2
+pkgrel=1
+pkgdesc='ClipsNeko Linux Hyprland dotfiles'
+groups=('clipsneko')
+makedepends=('git')
+depends=(
+    'hyprland'
+    'hypridle'
+    'hyprlock'
+    'hyprpaper'
+    'xdg-desktop-portal-hyprland'
+    'waybar'
+    'mako'
+    'kitty'
+    'uwsm'
+    'pipewire'
+    'wireplumber'
+    'pipewire-pulse'
+    'pipewire-alsa'
+    'qt5-wayland'
+    'qt6-wayland'
+)
+arch=('any')
+license=('custom')
+url="https://github.com/ReSpringClipsNeko/${pkgname}/"
+source=("git+https://github.com/ReSpringClipsNeko/clipsneko-dotfiles#tag=v$pkgver")
+sha512sums=('SKIP')
+
+package() {
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles"
+
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/kitty"
+    install -Dm644 "$srcdir/kitty/kitty.conf" "$pkgdir/usr/share/clipsneko-dotfiles/kitty/kitty.conf"
+
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/mako"
+    install -Dm644 "$srcdir/mako/config" "$pkgdir/usr/share/clipsneko-dotfiles/mako/config"
+
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/waybar"
+    install -Dm644 "$srcdir/waybar/config" "$pkgdir/usr/share/clipsneko-dotfiles/waybar/config"
+    install -Dm644 "$srcdir/waybar/style.css" "$pkgdir/usr/share/clipsneko-dotfiles/waybar/style.css"
+
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/hypr"
+    install -Dm644 "$srcdir/hypr/hyprland.lua" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprland.lua"
+    install -Dm644 "$srcdir/hypr/hypridle.conf" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hypridle.conf"
+    install -Dm644 "$srcdir/hypr/hyprlock.conf" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprlock.conf"
+    install -Dm644 "$srcdir/hypr/hyprpaper.conf" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprpaper.conf"
+    install -Dm755 "$srcdir/hypr/switch_workspace.sh" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/switch_workspace.sh"
+
+    install -Dm755 "$srcdir/clipsneko-install-dotfiles" "$pkgdir/usr/bin/clipsneko-install-dotfiles"
+}
