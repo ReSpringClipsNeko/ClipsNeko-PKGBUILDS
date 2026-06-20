@@ -1,6 +1,6 @@
 pkgbase = clipsneko-dotfiles
 	pkgdesc = ClipsNeko Linux Hyprland dotfiles
-	pkgver = 0.1.0
+	pkgver = 0.2.0
 	pkgrel = 1
 	url = https://github.com/ReSpringClipsNeko/clipsneko-dotfiles/
 	arch = any
@@ -22,7 +22,7 @@ pkgbase = clipsneko-dotfiles
 	depends = pipewire-alsa
 	depends = qt5-wayland
 	depends = qt6-wayland
-	source = git+https://github.com/ReSpringClipsNeko/clipsneko-dotfiles#tag=v0.1.0
+	source = git+https://github.com/ReSpringClipsNeko/clipsneko-dotfiles#tag=v0.2.0
 	sha512sums = SKIP
 
 pkgname = clipsneko-dotfiles
