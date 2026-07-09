@@ -1,7 +1,7 @@
 pkgbase = clipsneko-dotfiles
 	pkgdesc = ClipsNeko Linux Hyprland dotfiles
-	pkgver = 0.2.1
-	pkgrel = 2
+	pkgver = 0.2.2
+	pkgrel = 1
 	url = https://github.com/ReSpringClipsNeko/clipsneko-dotfiles/
 	arch = any
 	groups = clipsneko
@@ -24,7 +24,7 @@ pkgbase = clipsneko-dotfiles
 	depends = qt6-wayland
 	depends = brightnessctl
 	depends = hyprpolkitagent
-	source = git+https://github.com/ReSpringClipsNeko/clipsneko-dotfiles#tag=v0.2.1
+	source = git+https://github.com/ReSpringClipsNeko/clipsneko-dotfiles#tag=v0.2.2
 	sha512sums = SKIP
 
 pkgname = clipsneko-dotfiles
