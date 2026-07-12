@@ -1,0 +1,38 @@
+# Maintainer: zlicdt <zlicdt@clipsneko.cc>
+
+pkgname=clipsneko-keyring
+pkgver=20260712
+pkgrel=1
+pkgdesc='ClipsNeko Linux repository PGP keyring'
+arch=('any')
+groups=('clipsneko')
+url='https://github.com/ReSpringClipsNeko/ClipsNeko-pkgbuilds'
+depends=('pacman')
+install='clipsneko-keyring.install'
+source=('clipsneko-keyring.gpg')
+b2sums=('e91b0b54f999a81b439fa31afe06c3a9448a9fba2ee304756d0fa3917455878dface5b2f104ad554f84d49a863d074c381fd3aa09abd77604d8b63d1ae801e29')
+
+_fingerprint='6AD8737149355080648FCB64363D6C4A7A643615'
+
+build() {
+  gpg --batch --yes --dearmor --output clipsneko.gpg clipsneko-keyring.gpg
+}
+
+check() {
+  local fingerprint
+
+  fingerprint=$(gpg --batch --show-keys --with-colons clipsneko.gpg |
+    awk -F: '$1 == "fpr" { print $10; exit }')
+
+  [[ $fingerprint == "$_fingerprint" ]]
+}
+
+package() {
+  install -Dm644 clipsneko.gpg \
+    "$pkgdir/usr/share/pacman/keyrings/clipsneko.gpg"
+  printf '%s:6:\n' "$_fingerprint" > clipsneko-trusted
+  install -Dm644 clipsneko-trusted \
+    "$pkgdir/usr/share/pacman/keyrings/clipsneko-trusted"
+  install -Dm644 /dev/null \
+    "$pkgdir/usr/share/pacman/keyrings/clipsneko-revoked"
+}

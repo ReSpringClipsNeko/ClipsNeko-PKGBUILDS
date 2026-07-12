@@ -1,0 +1,13 @@
+pkgbase = clipsneko-keyring
+	pkgdesc = ClipsNeko Linux repository PGP keyring
+	pkgver = 20260712
+	pkgrel = 1
+	url = https://github.com/ReSpringClipsNeko/ClipsNeko-pkgbuilds
+	install = clipsneko-keyring.install
+	arch = any
+	groups = clipsneko
+	depends = pacman
+	source = clipsneko-keyring.gpg
+	b2sums = e91b0b54f999a81b439fa31afe06c3a9448a9fba2ee304756d0fa3917455878dface5b2f104ad554f84d49a863d074c381fd3aa09abd77604d8b63d1ae801e29
+
+pkgname = clipsneko-keyring
