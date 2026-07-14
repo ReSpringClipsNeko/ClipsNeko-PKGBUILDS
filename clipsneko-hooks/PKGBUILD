@@ -11,7 +11,7 @@ arch=('any')
 license=(GPL-3.0-or-later)
 url="https://github.com/ReSpringClipsNeko/${pkgname}/"
 source=("git+https://github.com/ReSpringClipsNeko/clipsneko-hooks#tag=$pkgver")
-sha512sums=('eef84fd3c9c2cc27e7e75fc7042cee76bed66f0261545ae81e97f2af465427bd3d1bb34216d49774610550d8501f615f0c5d4a1c51b9ef339d6bc16250d20c51')
+sha512sums=('19d0e0b6ddf33b96cae46e1313793717867c8ef9d6e82b5a3bc5c5863804018b938e2d5af6e674656829e202dca67d1491c043c25187ed225aa214aa870a2a6c')
 
 package() {
   cd "$pkgname"
