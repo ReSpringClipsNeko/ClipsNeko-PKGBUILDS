@@ -1,7 +1,7 @@
 # Maintainer: zlicdt <xkicdt1@gmail.com>
 
 pkgname=clipsneko-dotfiles
-pkgver=0.2.2
+pkgver=0.2.3
 pkgrel=1
 pkgdesc='ClipsNeko Linux Hyprland dotfiles'
 groups=('clipsneko')
@@ -11,6 +11,7 @@ depends=(
     'hypridle'
     'hyprlock'
     'hyprpaper'
+    'hyprshot'
     'xdg-desktop-portal-hyprland'
     'waybar'
     'mako'
@@ -20,6 +21,7 @@ depends=(
     'wireplumber'
     'pipewire-pulse'
     'pipewire-alsa'
+    'fuzzel'
     'qt5-wayland'
     'qt6-wayland'
     'brightnessctl'
