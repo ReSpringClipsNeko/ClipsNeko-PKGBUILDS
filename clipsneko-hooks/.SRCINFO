@@ -1,6 +1,6 @@
 pkgbase = clipsneko-hooks
 	pkgdesc = ClipsNeko Linux libalpm hooks
-	pkgver = 2026.07.14
+	pkgver = 2026.07.16
 	pkgrel = 1
 	url = https://github.com/ReSpringClipsNeko/clipsneko-hooks/
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = clipsneko-hooks
 	license = GPL-3.0-or-later
 	makedepends = git
 	depends = systemd
-	source = git+https://github.com/ReSpringClipsNeko/clipsneko-hooks#tag=2026.07.14
-	sha512sums = 19d0e0b6ddf33b96cae46e1313793717867c8ef9d6e82b5a3bc5c5863804018b938e2d5af6e674656829e202dca67d1491c043c25187ed225aa214aa870a2a6c
+	source = git+https://github.com/ReSpringClipsNeko/clipsneko-hooks#tag=2026.07.16
+	sha512sums = 4bde992ce06c0d63873087edc994d4116cf38f0a2c8023ce17159e57a37ea4890dfd15f4d860fad1dc5ac0d005a36f1f07e3ea87cca010aee84da32a2649929b
 
 pkgname = clipsneko-hooks
