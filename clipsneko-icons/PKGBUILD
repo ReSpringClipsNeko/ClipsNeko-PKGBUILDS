@@ -1,8 +1,8 @@
-# Maintainer: zlicdt <xkicdt1@gmail.com>
+# Maintainer: zlicdt <zlicdt@clipsneko.cc>
 
 pkgname=clipsneko-icons
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Icons for ClipsNeko Linux"
 arch=('any')
 url="https://github.com/ReSpringClipsNeko/ClipsNeko-Icons"
