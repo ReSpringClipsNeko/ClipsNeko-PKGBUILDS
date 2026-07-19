@@ -1,7 +1,7 @@
 pkgbase = clipsneko-icons
 	pkgdesc = Icons for ClipsNeko Linux
 	pkgver = 1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ReSpringClipsNeko/ClipsNeko-Icons
 	arch = any
 	license = custom
