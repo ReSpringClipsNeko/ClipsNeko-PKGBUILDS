@@ -1,7 +1,7 @@
 # Maintainer: zlicdt <xkicdt1@gmail.com>
 
 pkgname=clipsneko-hooks
-pkgver=2026.07.16
+pkgver=2026.07.24
 pkgrel=1
 pkgdesc='ClipsNeko Linux libalpm hooks'
 groups=('clipsneko')
@@ -11,7 +11,7 @@ arch=('any')
 license=(GPL-3.0-or-later)
 url="https://github.com/ReSpringClipsNeko/${pkgname}/"
 source=("git+https://github.com/ReSpringClipsNeko/clipsneko-hooks#tag=$pkgver")
-sha512sums=('4bde992ce06c0d63873087edc994d4116cf38f0a2c8023ce17159e57a37ea4890dfd15f4d860fad1dc5ac0d005a36f1f07e3ea87cca010aee84da32a2649929b')
+sha512sums=('31f597d4b714a5aa2f2b0283e25e584096a85bd8cc2e4d1f88a8a8fbeb356c171f15c86258629dee8bf59eccfbd9868364d5bf596ce36cc3b6cad792048586e5')
 
 package() {
   cd "$pkgname"
