@@ -45,6 +45,8 @@ package() {
     install -d "$pkgdir/usr/share/clipsneko-dotfiles/waybar"
     install -Dm644 "$srcdir/$pkgname/waybar/config" "$pkgdir/usr/share/clipsneko-dotfiles/waybar/config"
     install -Dm644 "$srcdir/$pkgname/waybar/style.css" "$pkgdir/usr/share/clipsneko-dotfiles/waybar/style.css"
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/waybar/scripts"
+    install -Dm755 "$srcdir/$pkgname/waybar/scripts/audio-output.sh" "$pkgdir/usr/share/clipsneko-dotfiles/waybar/scripts/audio-output.sh"
 
     install -d "$pkgdir/usr/share/clipsneko-dotfiles/hypr"
     install -Dm644 "$srcdir/$pkgname/hypr/hyprland.lua" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprland.lua"
@@ -52,6 +54,10 @@ package() {
     install -Dm644 "$srcdir/$pkgname/hypr/hyprlock.conf" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprlock.conf"
     install -Dm644 "$srcdir/$pkgname/hypr/hyprpaper.conf" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/hyprpaper.conf"
     install -Dm755 "$srcdir/$pkgname/hypr/switch_workspace.sh" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/switch_workspace.sh"
+    install -Dm755 "$srcdir/$pkgname/hypr/switch_theme.sh" "$pkgdir/usr/share/clipsneko-dotfiles/hypr/switch_theme.sh"
 
     install -Dm755 "$srcdir/$pkgname/clipsneko-install-dotfiles" "$pkgdir/usr/bin/clipsneko-install-dotfiles"
+
+    install -d "$pkgdir/usr/share/clipsneko-dotfiles/zshrc"
+    install -Dm644 "$srcdir/$pkgname/zshrc/.zshrc" "$pkgdir/usr/share/clipsneko-dotfiles/zshrc/.zshrc"
 }
