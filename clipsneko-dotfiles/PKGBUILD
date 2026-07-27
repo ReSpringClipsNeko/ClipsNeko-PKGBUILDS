@@ -1,7 +1,7 @@
 # Maintainer: zlicdt <zlicdt@clipsneko.cc>
 
 pkgname=clipsneko-dotfiles
-pkgver=0.2.6
+pkgver=0.2.7
 pkgrel=1
 pkgdesc='ClipsNeko Linux Hyprland dotfiles'
 groups=('clipsneko')
