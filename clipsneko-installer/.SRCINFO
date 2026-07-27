@@ -1,6 +1,6 @@
 pkgbase = clipsneko-installer
 	pkgdesc = TUI installer for ClipsNeko Linux
-	pkgver = 0.2.0
+	pkgver = 0.2.1
 	pkgrel = 1
 	url = https://github.com/zlicdt/clipsneko-installer
 	arch = x86_64
@@ -12,7 +12,7 @@ pkgbase = clipsneko-installer
 	depends = glibc
 	depends = inetutils
 	backup = etc/clipsneko-installer/packages.list
-	source = clipsneko-installer::git+https://github.com/zlicdt/clipsneko-installer.git#tag=v0.2.0
+	source = clipsneko-installer::git+https://github.com/zlicdt/clipsneko-installer.git#tag=v0.2.1
 	sha256sums = SKIP
 
 pkgname = clipsneko-installer
