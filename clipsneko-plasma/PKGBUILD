@@ -1,0 +1,58 @@
+# Maintainer: zlicdt <zlicdt@clipsneko.cc>
+pkgname=clipsneko-plasma
+pkgver=0.2.7
+pkgrel=1
+pkgdesc='ClipsNeko Linux KDE plasma dotfiles'
+arch=('any')
+license=('custom')
+depends=(
+  'plasma-meta'
+  'kde-system-meta'
+  'kde-utilities-meta'
+)
+
+backup=('etc/sddm.conf.d/90-kde-dotfiles.conf')
+install=clipsneko-kde-config.install
+
+source=(
+  "$pkgname-$pkgver.tar.gz::https://github.com/respringclipsneko/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
+)
+sha256sums=(
+  'SKIP'
+)
+
+package() {
+  local source_root="$srcdir/$pkgname-$pkgver"
+  local data_root="$pkgdir/usr/share/kde-dotfiles"
+  local sddm_theme="$pkgdir/usr/share/sddm/themes/breeze-clipsneko"
+
+  install -Dm755 "$source_root/clipsneko-kde-configure" \
+    "$pkgdir/usr/bin/clipsneko-kde-configure"
+
+  install -Dm644 "$source_root/.config/konsolerc" \
+    "$data_root/.config/konsolerc"
+  install -Dm644 "$source_root/.local/share/konsole/clipsneko.profile" \
+    "$data_root/.local/share/konsole/clipsneko.profile"
+  install -Dm644 "$source_root/.local/share/konsole/catppuccin-mocha.colorscheme" \
+    "$data_root/.local/share/konsole/catppuccin-mocha.colorscheme"
+  install -Dm644 "$source_root/.local/share/plasma/look-and-feel/ayaws/metadata.json" \
+    "$data_root/.local/share/plasma/look-and-feel/ayaws/metadata.json"
+  install -Dm644 "$source_root/.local/share/plasma/look-and-feel/ayaws/contents/defaults" \
+    "$data_root/.local/share/plasma/look-and-feel/ayaws/contents/defaults"
+  install -Dm644 "$source_root/.local/share/plasma/look-and-feel/ayaws/contents/layouts/org.kde.plasma.desktop-layout.js" \
+    "$data_root/.local/share/plasma/look-and-feel/ayaws/contents/layouts/org.kde.plasma.desktop-layout.js"
+  install -Dm644 "$source_root/.local/share/wallpapers/ayaws/contents/images/4000x2250.png" \
+    "$data_root/.local/share/wallpapers/ayaws/contents/images/4000x2250.png"
+  install -Dm644 "$source_root/kwin/kwinrc" "$data_root/kwin/kwinrc"
+
+  install -d "$sddm_theme"
+  for file in Main.qml Background.qml KeyboardButton.qml Login.qml \
+      SessionButton.qml default-logo.svg preview.png Messages.sh; do
+    ln -s "../breeze/$file" "$sddm_theme/$file"
+  done
+  install -Dm644 "$source_root/sddm/metadata.desktop" "$sddm_theme/metadata.desktop"
+  install -Dm644 "$source_root/sddm/theme.conf" "$sddm_theme/theme.conf"
+  install -Dm644 "$source_root/sddm/background.png" "$sddm_theme/background.png"
+  install -Dm644 "$source_root/sddm/kde_settings.conf" \
+    "$pkgdir/etc/sddm.conf.d/90-kde-dotfiles.conf"
+}
